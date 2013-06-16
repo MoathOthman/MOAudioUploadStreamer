@@ -42,16 +42,14 @@
 @property(assign,nonatomic)NSTimeInterval expectingTimeOut;
 @property(assign)id<MOAudioStreamerDeelegate>streamerDelegate;
 @property(strong,nonatomic)NSString*recordingPath;
-@property(assign,nonatomic)int ayahToNumber;
-@property(assign,nonatomic)int suraID;
-@property(assign,nonatomic)int ayahFromNumber;
+@property(strong,nonatomic)NSString *webServiceURL;
+@property(strong,nonatomic)NSString *fileToSaveName;
 @property(retain,nonatomic)NSString*password;
 @property(retain,nonatomic)NSString*userName;
 @property (nonatomic, strong, readwrite) NSURLConnection *  connection;
 @property(strong,nonatomic)AVAudioRecorder *recorder;
 @property(assign)int lol;
 - (IBAction)sendAction:(UIView *)sender;
-- (void)send:(int)ayahNumber Sura:(int)suraNumber;
 
 -(void)stopStreaming;
 - (IBAction)cancelAction:(id)sender;

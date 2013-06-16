@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC1032B41757D64400DE7E9E /* NSData+Additions.h in Resources */ = {isa = PBXBuildFile; fileRef = EC1032B31757D64400DE7E9E /* NSData+Additions.h */; };
-		EC1032B61757FF2200DE7E9E /* NSData+Additions.m in Resources */ = {isa = PBXBuildFile; fileRef = EC1032B51757FF2200DE7E9E /* NSData+Additions.m */; };
+		EC57F9BE176D9D1100BE8894 /* NSData+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */; };
+		EC57F9BF176D9D1100BE8894 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */; };
+		EC57F9C0176D9D1100BE8894 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ECC28E2A175202F800A5923D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC28E29175202F800A5923D /* Foundation.framework */; };
 		ECC28E2F175202F800A5923D /* AudioStreamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ECC28E2E175202F800A5923D /* AudioStreamer.h */; };
 		ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E3A1752047800A5923D /* MOAudioStreamer.m */; };
@@ -39,16 +40,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC1032B31757D64400DE7E9E /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSData+Additions.h"; path = "../../AudioUploader/AudioUploader/NSData+Additions.h"; sourceTree = "<group>"; };
-		EC1032B51757FF2200DE7E9E /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSData+Additions.m"; path = "../../AudioUploader/AudioUploader/NSData+Additions.m"; sourceTree = "<group>"; };
+		EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Additions.h"; path = "../MOUploadAudioStreamer/NSData+Additions.h"; sourceTree = "<group>"; };
+		EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Additions.m"; path = "../MOUploadAudioStreamer/NSData+Additions.m"; sourceTree = "<group>"; };
 		ECC28E26175202F800A5923D /* libAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioStreamer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC28E29175202F800A5923D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ECC28E2D175202F800A5923D /* AudioStreamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioStreamer-Prefix.pch"; sourceTree = "<group>"; };
-		ECC28E2E175202F800A5923D /* AudioStreamer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = ../AudioStreamer/AudioStreamer.h; sourceTree = "<group>"; };
-		ECC28E371752047800A5923D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../AudioStreamer/NetworkManager.h; sourceTree = "<group>"; };
-		ECC28E381752047800A5923D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = ../AudioStreamer/NetworkManager.m; sourceTree = "<group>"; };
-		ECC28E391752047800A5923D /* MOAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAudioStreamer.h; path = ../AudioStreamer/MOAudioStreamer.h; sourceTree = "<group>"; };
-		ECC28E3A1752047800A5923D /* MOAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOAudioStreamer.m; path = ../AudioStreamer/MOAudioStreamer.m; sourceTree = "<group>"; };
+		ECC28E2E175202F800A5923D /* AudioStreamer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		ECC28E371752047800A5923D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		ECC28E381752047800A5923D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		ECC28E391752047800A5923D /* MOAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAudioStreamer.h; sourceTree = "<group>"; };
+		ECC28E3A1752047800A5923D /* MOAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAudioStreamer.m; sourceTree = "<group>"; };
 		ECE032EB1755D9FB000055EB /* MOUploadAudioStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOUploadAudioStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE032EC1755D9FB000055EB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		ECE032F01755D9FB000055EB /* MOUploadAudioStreamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOUploadAudioStreamer-Info.plist"; sourceTree = "<group>"; };
@@ -77,9 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC57F9C1176D9DD000BE8894 /* Assist Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ECC28E371752047800A5923D /* NetworkManager.h */,
+				ECC28E381752047800A5923D /* NetworkManager.m */,
+				EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */,
+				EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */,
+			);
+			name = "Assist Classes";
+			sourceTree = "<group>";
+		};
 		ECA5080B17537E3F00B9A88A /* MOAudioStreamer */ = {
 			isa = PBXGroup;
 			children = (
+				ECC28E2E175202F800A5923D /* AudioStreamer.h */,
+				ECC28E391752047800A5923D /* MOAudioStreamer.h */,
+				ECC28E3A1752047800A5923D /* MOAudioStreamer.m */,
 			);
 			name = MOAudioStreamer;
 			sourceTree = "<group>";
@@ -115,6 +130,7 @@
 		ECC28E2B175202F800A5923D /* AudioStreamer */ = {
 			isa = PBXGroup;
 			children = (
+				EC57F9C1176D9DD000BE8894 /* Assist Classes */,
 				ECA5080B17537E3F00B9A88A /* MOAudioStreamer */,
 				ECC28E2C175202F800A5923D /* Supporting Files */,
 			);
@@ -132,13 +148,6 @@
 		ECE032EE1755D9FB000055EB /* MOUploadAudioStreamer */ = {
 			isa = PBXGroup;
 			children = (
-				ECC28E2E175202F800A5923D /* AudioStreamer.h */,
-				ECC28E391752047800A5923D /* MOAudioStreamer.h */,
-				ECC28E3A1752047800A5923D /* MOAudioStreamer.m */,
-				ECC28E371752047800A5923D /* NetworkManager.h */,
-				ECC28E381752047800A5923D /* NetworkManager.m */,
-				EC1032B31757D64400DE7E9E /* NSData+Additions.h */,
-				EC1032B51757FF2200DE7E9E /* NSData+Additions.m */,
 				ECE032EF1755D9FB000055EB /* Supporting Files */,
 			);
 			path = MOUploadAudioStreamer;
@@ -164,6 +173,7 @@
 				ECE032FE1755DB74000055EB /* MOAudioStreamer.h in Headers */,
 				ECE032FD1755DB6F000055EB /* AudioStreamer.h in Headers */,
 				ECE033041755DBC9000055EB /* NetworkManager.h in Headers */,
+				EC57F9BE176D9D1100BE8894 /* NSData+Additions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,8 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE032F31755D9FB000055EB /* InfoPlist.strings in Resources */,
-				EC1032B41757D64400DE7E9E /* NSData+Additions.h in Resources */,
-				EC1032B61757FF2200DE7E9E /* NSData+Additions.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +260,7 @@
 			files = (
 				ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */,
 				ECC28E46175206B900A5923D /* NetworkManager.m in Sources */,
+				EC57F9BF176D9D1100BE8894 /* NSData+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 			files = (
 				ECE032FF1755DB9D000055EB /* MOAudioStreamer.m in Sources */,
 				ECE033011755DBC2000055EB /* NetworkManager.m in Sources */,
+				EC57F9C0176D9D1100BE8894 /* NSData+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

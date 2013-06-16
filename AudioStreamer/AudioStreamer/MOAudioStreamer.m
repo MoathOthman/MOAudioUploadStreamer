@@ -201,7 +201,7 @@ enum {
 }
  
 
-- (void)startSend:(NSString *)ayahID
+- (void)startSend 
 {
     
     NSNumber *              fileLengthNum;
@@ -209,8 +209,7 @@ enum {
     NSInputStream *         consStream;
     NSOutputStream *        prodStream;
     
-    NSArray *IDARRAY   =[ayahID componentsSeparatedByString:@"_"];
-    
+     
     
     
     self.bodyPrefixData = [NSData data];
@@ -222,7 +221,7 @@ enum {
     NSString *documentsDirectory = self.recordingPath;
     NSLog(@"documentsDirectory is %@",documentsDirectory);
     
-    fullPathToFilex = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%i%i.%@",self.ayahFromNumber,self.ayahToNumber,ext ]];
+    fullPathToFilex = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",self.fileToSaveName,ext ]];
     
     fileLengthNum = (NSNumber *) [[[NSFileManager defaultManager] attributesOfItemAtPath:fullPathToFilex error:NULL] objectForKey:NSFileSize];
    // assert( [fileLengthNum isKindOfClass:[NSNumber class]] );
@@ -274,7 +273,7 @@ enum {
     
     // Open a connection for the URL, configured to POST the file.
     //api.hafizquran.com
-    NSString *urlString=[NSString stringWithFormat: @"http://api.hafizquran.com/api/user-sound?surahId=%@&ayahFrom=%@&ayahTo=%@&extension=caf&resultFormat=html",[IDARRAY objectAtIndex:0 ],[IDARRAY objectAtIndex:1],[IDARRAY objectAtIndex:2]];
+    NSString *urlString=[NSString stringWithFormat: @"%@",self.webServiceURL];
         request = (NSMutableURLRequest*)[self postRequestWithURL:urlString data:data fileName:nil];
     [request setTimeoutInterval:1280];
     
@@ -296,7 +295,7 @@ enum {
     dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     
     _streamDispatch = dispatch_queue_create(
-                                            "Data Cache queue",
+                                            "AUDIO STREAM queue",
                                             DISPATCH_QUEUE_SERIAL);
     dispatch_set_target_queue(_streamDispatch, highPriQueue);
     stopSendingStupidData=NO;
@@ -307,53 +306,11 @@ enum {
             [self streamHandler:nil handleEvent:NSStreamEventHasSpaceAvailable];
             
         }
-//        while (!stopSendingStupidData) {
-//            [self connection:self.connection didReceiveData:[NSData dataWithBase64EncodedString:@"HEOLLO"]];
-//        }
-        
-    });
-#if USING_SYNC
-   
+     });
     
-    NSError *connectionErrorx=nil;
-    NSData *returnedData=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&connectionErrorx];
+     orderToStop=NO;
     
-    if (connectionErrorx) {
-        NSLog(@"an error happened to the connection wich is \n%@",connectionErrorx.localizedDescription);
-    }
-    
-    NSString *String =[[NSString alloc]initWithData:returnedData encoding:NSUTF8StringEncoding];
-    //    [self.streamerDelegate MOAudioStreamerDidFinishRequest:theConnection withResponse:String];
-    
-    if (self.streamerDelegate &&[self.streamerDelegate respondsToSelector:@selector(MOAudioStreamerDidFinishRequest:withResponse:)]) {
-        [self.streamerDelegate MOAudioStreamerDidFinishRequest:nil withResponse:String];
-    }else{
-        NSLog(@"it does not respond to selector streamdidFinishRequest");
-    }
-
-    NSLog(@"return data is %@ datalength is  %li",[[NSString alloc] initWithData:returnedData encoding:NSUTF8StringEncoding],(unsigned long)returnedData.length);
-    //assert(self.connection != nil);
-
-#endif
-    orderToStop=NO;
-    
-    
-//    
-//    NSMutableURLRequest *mynewREquest=[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:@"http://hafizquran.com/en/admin/recognition/edit/id/15394"]];
-//    [mynewREquest setHTTPMethod:@"GET"];
-//
-//    NSString *encodedEveryThing;
-//    encodedEveryThing = [self getEncodedHeader];
-//    
-//    [mynewREquest addValue:[NSString stringWithFormat:@"Basic %@",encodedEveryThing] forHTTPHeaderField:@"Authorization"];
-//    
-//    NSData *testre=[NSURLConnection sendSynchronousRequest:mynewREquest returningResponse:nil error:nil];
-//    
-//    NSString*fos=[[NSString alloc]initWithData:testre encoding:NSUTF8StringEncoding];
-//    NSLog(@"my new string from stupid request is %@",fos);
-        /***end of the GCD**/
-    
-    // Tell the UI we're sending.
+  
     
     [self sendDidStart];
     // }
@@ -556,45 +513,7 @@ enum {
 
 }
 
-- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
-// An NSStream delegate callback that's called when events happen on our
-// network stream.
-{
-      
-    dispatch_queue_t lowPriQueue =
-    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    
-    _streamDispatch = dispatch_queue_create(
-                                            "Data Cache queue",
-                                            DISPATCH_QUEUE_SERIAL);
-    dispatch_set_target_queue(_streamDispatch, lowPriQueue);
-    
-    
-    if (1 ) {
-        
-        dispatch_async(_streamDispatch, ^{
-           // [self streamHandler:aStream handleEvent:eventCode];
-                   });
-    }else{
-        
-        [self.fileStream close];
-        self.fileStream = nil;
-        
-        assert(self.bufferOnHeap != NULL);
-        free(self.bufferOnHeap);
-        
-        self.bufferOnHeap = NULL;
-        self.buffer       = [self.bodySuffixData bytes];
-        
-        self.bufferOffset = 0;
-        self.bufferLimit  = [self.bodySuffixData length];
-        self.producerStream.delegate=nil;
-        [self.producerStream close];
-        
-    }
-    
-}
-
+ 
 
 
 #pragma mark connection Delegate
@@ -644,12 +563,7 @@ enum {
     }
     
     [responseData appendData:data];
-//     NSString *String =[[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
-//     NSString *String2 =[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-
-  //  NSLog(@"\ndidreceive data which is %@ \n originaldata %@",String,String2);
-   // [self.streamerDelegate MOAudioStreamerDidFinishRequest:theConnection withResponse:String];
-   // assert(theConnection == self.connection);
+ 
     
     // do nothing
         
@@ -692,9 +606,7 @@ enum {
     NSString *String =[[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
         //    [self.streamerDelegate MOAudioStreamerDidFinishRequest:theConnection withResponse:String];
         if (!responseData) {
-           // NSLog(@"connectio  did finish loading with no response data");
-            //try to connect again if the connection forced to close
-           // [self.connection start];
+          
             if (self.streamerDelegate &&[self.streamerDelegate respondsToSelector:@selector(MOAudioStreamerDidFailed:message:)]) {
                 [self.streamerDelegate MOAudioStreamerDidFailed:self message:NSLocalizedString(@"connection finished loading with no response", nil) ];
             }
@@ -720,16 +632,15 @@ enum {
 #pragma mark * Actions
 - (void)send:(int)ayahNumber Sura:(int)suraNumber;
 {
-        self.ayahFromNumber=ayahNumber;
-        giveMeResults=YES;
-        [self setupNewRocordableFile:ayahNumber ayah:self.ayahToNumber];
+         giveMeResults=YES;
+        [self setupNewRocordableFile ];
     
 //     
 #if USING_SYNC
     NSThread *mythread=[[NSThread alloc]initWithTarget:self selector:@selector(startSend:) object:[NSString stringWithFormat:@"%i_%i_%i",suraNumber,ayahNumber,self.ayahToNumber]];
      [mythread start];
 #else
-    [self performSelector:@selector(startSend:) withObject:[NSString stringWithFormat:@"%i_%i_%i",suraNumber,ayahNumber,self.ayahToNumber] afterDelay:0];
+    [self performSelector:@selector(startSend) withObject:[NSNull null] afterDelay:0];
   
 #endif
 //
@@ -800,7 +711,7 @@ NSString *fullPathToFilex;
     
     return urlRequest;
 }
--(void)setupNewRocordableFile:(int)surahID ayah:(int)ayahID{
+-(void)setupNewRocordableFile{
     
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
@@ -816,7 +727,7 @@ NSString *fullPathToFilex;
     
     
     soundFilePath = [dataPath
-                     stringByAppendingPathComponent:[NSString stringWithFormat:@"%i%i.%@",surahID, ayahID,ext ]];
+                     stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",self.fileToSaveName,ext ]];
      
     NSLog(@"soundFilePAth is %@",soundFilePath);
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
