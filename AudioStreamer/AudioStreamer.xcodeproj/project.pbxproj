@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC1032B41757D64400DE7E9E /* NSData+Additions.h in Resources */ = {isa = PBXBuildFile; fileRef = EC1032B31757D64400DE7E9E /* NSData+Additions.h */; };
+		EC1032B61757FF2200DE7E9E /* NSData+Additions.m in Resources */ = {isa = PBXBuildFile; fileRef = EC1032B51757FF2200DE7E9E /* NSData+Additions.m */; };
+		ECC28E2A175202F800A5923D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC28E29175202F800A5923D /* Foundation.framework */; };
+		ECC28E2F175202F800A5923D /* AudioStreamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ECC28E2E175202F800A5923D /* AudioStreamer.h */; };
+		ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E3A1752047800A5923D /* MOAudioStreamer.m */; };
+		ECC28E46175206B900A5923D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E381752047800A5923D /* NetworkManager.m */; };
+		ECC28E59175211D600A5923D /* MOAudioStreamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ECC28E391752047800A5923D /* MOAudioStreamer.h */; };
+		ECE032ED1755D9FB000055EB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE032EC1755D9FB000055EB /* CoreFoundation.framework */; };
+		ECE032F31755D9FB000055EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECE032F11755D9FB000055EB /* InfoPlist.strings */; };
+		ECE032FD1755DB6F000055EB /* AudioStreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC28E2E175202F800A5923D /* AudioStreamer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECE032FE1755DB74000055EB /* MOAudioStreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC28E391752047800A5923D /* MOAudioStreamer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECE032FF1755DB9D000055EB /* MOAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E3A1752047800A5923D /* MOAudioStreamer.m */; };
+		ECE033001755DBB7000055EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC28E29175202F800A5923D /* Foundation.framework */; };
+		ECE033011755DBC2000055EB /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E381752047800A5923D /* NetworkManager.m */; };
+		ECE033041755DBC9000055EB /* NetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC28E371752047800A5923D /* NetworkManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ECC28E24175202F800A5923D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				ECC28E59175211D600A5923D /* MOAudioStreamer.h in CopyFiles */,
+				ECC28E2F175202F800A5923D /* AudioStreamer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EC1032B31757D64400DE7E9E /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSData+Additions.h"; path = "../../AudioUploader/AudioUploader/NSData+Additions.h"; sourceTree = "<group>"; };
+		EC1032B51757FF2200DE7E9E /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSData+Additions.m"; path = "../../AudioUploader/AudioUploader/NSData+Additions.m"; sourceTree = "<group>"; };
+		ECC28E26175202F800A5923D /* libAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioStreamer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC28E29175202F800A5923D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ECC28E2D175202F800A5923D /* AudioStreamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioStreamer-Prefix.pch"; sourceTree = "<group>"; };
+		ECC28E2E175202F800A5923D /* AudioStreamer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = ../AudioStreamer/AudioStreamer.h; sourceTree = "<group>"; };
+		ECC28E371752047800A5923D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../AudioStreamer/NetworkManager.h; sourceTree = "<group>"; };
+		ECC28E381752047800A5923D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = ../AudioStreamer/NetworkManager.m; sourceTree = "<group>"; };
+		ECC28E391752047800A5923D /* MOAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAudioStreamer.h; path = ../AudioStreamer/MOAudioStreamer.h; sourceTree = "<group>"; };
+		ECC28E3A1752047800A5923D /* MOAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOAudioStreamer.m; path = ../AudioStreamer/MOAudioStreamer.m; sourceTree = "<group>"; };
+		ECE032EB1755D9FB000055EB /* MOUploadAudioStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOUploadAudioStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECE032EC1755D9FB000055EB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		ECE032F01755D9FB000055EB /* MOUploadAudioStreamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOUploadAudioStreamer-Info.plist"; sourceTree = "<group>"; };
+		ECE032F21755D9FB000055EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ECE032F41755D9FB000055EB /* MOUploadAudioStreamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOUploadAudioStreamer-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECC28E23175202F800A5923D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC28E2A175202F800A5923D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECE032E81755D9FB000055EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE032ED1755D9FB000055EB /* CoreFoundation.framework in Frameworks */,
+				ECE033001755DBB7000055EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECA5080B17537E3F00B9A88A /* MOAudioStreamer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MOAudioStreamer;
+			sourceTree = "<group>";
+		};
+		ECC28E1D175202F800A5923D = {
+			isa = PBXGroup;
+			children = (
+				ECC28E2B175202F800A5923D /* AudioStreamer */,
+				ECE032EE1755D9FB000055EB /* MOUploadAudioStreamer */,
+				ECC28E28175202F800A5923D /* Frameworks */,
+				ECC28E27175202F800A5923D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECC28E27175202F800A5923D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC28E26175202F800A5923D /* libAudioStreamer.a */,
+				ECE032EB1755D9FB000055EB /* MOUploadAudioStreamer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECC28E28175202F800A5923D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECC28E29175202F800A5923D /* Foundation.framework */,
+				ECE032EC1755D9FB000055EB /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECC28E2B175202F800A5923D /* AudioStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				ECA5080B17537E3F00B9A88A /* MOAudioStreamer */,
+				ECC28E2C175202F800A5923D /* Supporting Files */,
+			);
+			path = AudioStreamer;
+			sourceTree = "<group>";
+		};
+		ECC28E2C175202F800A5923D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECC28E2D175202F800A5923D /* AudioStreamer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECE032EE1755D9FB000055EB /* MOUploadAudioStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				ECC28E2E175202F800A5923D /* AudioStreamer.h */,
+				ECC28E391752047800A5923D /* MOAudioStreamer.h */,
+				ECC28E3A1752047800A5923D /* MOAudioStreamer.m */,
+				ECC28E371752047800A5923D /* NetworkManager.h */,
+				ECC28E381752047800A5923D /* NetworkManager.m */,
+				EC1032B31757D64400DE7E9E /* NSData+Additions.h */,
+				EC1032B51757FF2200DE7E9E /* NSData+Additions.m */,
+				ECE032EF1755D9FB000055EB /* Supporting Files */,
+			);
+			path = MOUploadAudioStreamer;
+			sourceTree = "<group>";
+		};
+		ECE032EF1755D9FB000055EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECE032F01755D9FB000055EB /* MOUploadAudioStreamer-Info.plist */,
+				ECE032F11755D9FB000055EB /* InfoPlist.strings */,
+				ECE032F41755D9FB000055EB /* MOUploadAudioStreamer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ECE032F81755DA89000055EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE032FE1755DB74000055EB /* MOAudioStreamer.h in Headers */,
+				ECE032FD1755DB6F000055EB /* AudioStreamer.h in Headers */,
+				ECE033041755DBC9000055EB /* NetworkManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		ECC28E25175202F800A5923D /* AudioStreamer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC28E34175202F800A5923D /* Build configuration list for PBXNativeTarget "AudioStreamer" */;
+			buildPhases = (
+				ECC28E22175202F800A5923D /* Sources */,
+				ECC28E23175202F800A5923D /* Frameworks */,
+				ECC28E24175202F800A5923D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioStreamer;
+			productName = AudioStreamer;
+			productReference = ECC28E26175202F800A5923D /* libAudioStreamer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ECE032EA1755D9FB000055EB /* MOUploadAudioStreamer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECE032F71755D9FB000055EB /* Build configuration list for PBXNativeTarget "MOUploadAudioStreamer" */;
+			buildPhases = (
+				ECE032E71755D9FB000055EB /* Sources */,
+				ECE032F81755DA89000055EB /* Headers */,
+				ECE032E81755D9FB000055EB /* Frameworks */,
+				ECE032E91755D9FB000055EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOUploadAudioStreamer;
+			productName = MOUploadAudioStreamer;
+			productReference = ECE032EB1755D9FB000055EB /* MOUploadAudioStreamer.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECC28E1E175202F800A5923D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "moath othman";
+			};
+			buildConfigurationList = ECC28E21175202F800A5923D /* Build configuration list for PBXProject "AudioStreamer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ECC28E1D175202F800A5923D;
+			productRefGroup = ECC28E27175202F800A5923D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECC28E25175202F800A5923D /* AudioStreamer */,
+				ECE032EA1755D9FB000055EB /* MOUploadAudioStreamer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECE032E91755D9FB000055EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE032F31755D9FB000055EB /* InfoPlist.strings in Resources */,
+				EC1032B41757D64400DE7E9E /* NSData+Additions.h in Resources */,
+				EC1032B61757FF2200DE7E9E /* NSData+Additions.m in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECC28E22175202F800A5923D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */,
+				ECC28E46175206B900A5923D /* NetworkManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECE032E71755D9FB000055EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE032FF1755DB9D000055EB /* MOAudioStreamer.m in Sources */,
+				ECE033011755DBC2000055EB /* NetworkManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECE032F11755D9FB000055EB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECE032F21755D9FB000055EB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECC28E32175202F800A5923D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ECC28E33175202F800A5923D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECC28E35175202F800A5923D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AudioStreamer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AudioStreamer/AudioStreamer-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ECC28E36175202F800A5923D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AudioStreamer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AudioStreamer/AudioStreamer-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ECE032F51755D9FB000055EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOUploadAudioStreamer/MOUploadAudioStreamer-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "MOUploadAudioStreamer/MOUploadAudioStreamer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		ECE032F61755D9FB000055EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOUploadAudioStreamer/MOUploadAudioStreamer-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "MOUploadAudioStreamer/MOUploadAudioStreamer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECC28E21175202F800A5923D /* Build configuration list for PBXProject "AudioStreamer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC28E32175202F800A5923D /* Debug */,
+				ECC28E33175202F800A5923D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC28E34175202F800A5923D /* Build configuration list for PBXNativeTarget "AudioStreamer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC28E35175202F800A5923D /* Debug */,
+				ECC28E36175202F800A5923D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECE032F71755D9FB000055EB /* Build configuration list for PBXNativeTarget "MOUploadAudioStreamer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECE032F51755D9FB000055EB /* Debug */,
+				ECE032F61755D9FB000055EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECC28E1E175202F800A5923D /* Project object */;
+}

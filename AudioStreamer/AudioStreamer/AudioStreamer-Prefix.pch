@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AudioStreamer' target in the 'AudioStreamer' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
