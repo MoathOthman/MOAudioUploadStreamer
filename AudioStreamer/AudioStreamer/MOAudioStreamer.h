@@ -49,9 +49,7 @@
 @property (nonatomic, strong, readwrite) NSURLConnection *  connection;
 @property(strong,nonatomic)AVAudioRecorder *recorder;
 @property(assign)int lol;
-- (IBAction)sendAction:(UIView *)sender;
-
+ - (void)startStreamer;
 -(void)stopStreaming;
-- (IBAction)cancelAction:(id)sender;
-
+- (void)cancelStreaming;
 @end

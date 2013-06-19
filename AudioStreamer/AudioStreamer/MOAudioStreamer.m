@@ -274,6 +274,7 @@ enum {
     // Open a connection for the URL, configured to POST the file.
     //api.hafizquran.com
     NSString *urlString=[NSString stringWithFormat: @"%@",self.webServiceURL];
+    
         request = (NSMutableURLRequest*)[self postRequestWithURL:urlString data:data fileName:nil];
     [request setTimeoutInterval:1280];
     
@@ -630,20 +631,15 @@ enum {
 }
 
 #pragma mark * Actions
-- (void)send:(int)ayahNumber Sura:(int)suraNumber;
+- (void)startStreamer;
 {
          giveMeResults=YES;
         [self setupNewRocordableFile ];
     
-//     
-#if USING_SYNC
-    NSThread *mythread=[[NSThread alloc]initWithTarget:self selector:@selector(startSend:) object:[NSString stringWithFormat:@"%i_%i_%i",suraNumber,ayahNumber,self.ayahToNumber]];
-     [mythread start];
-#else
+ 
     [self performSelector:@selector(startSend) withObject:[NSNull null] afterDelay:0];
   
-#endif
-//
+ 
     
            StopSignal=NO;
     
@@ -653,10 +649,9 @@ enum {
     [self.recorder stop];
     StopSignal=YES;
 }
- - (IBAction)cancelAction:(id)sender
+ - (void)cancelStreaming
 {
-#pragma unused(sender)
-    [self stopSendWithStatus:@"Cancelled"];
+     [self stopSendWithStatus:@"Cancelled"];
 }
  #pragma mark * URL Request
 NSString *fullPathToFilex;
@@ -704,6 +699,8 @@ NSString *fullPathToFilex;
     [urlRequest setValue:@"max-age=0" forHTTPHeaderField:@"Cache-Control"];
     
     NSString *encodedEveryThing;
+    
+    /*MARK:you can ignore the following 2 line if you don't use Basic Authorization */
     encodedEveryThing = [self getEncodedHeader];
     
     [urlRequest addValue:[NSString stringWithFormat:@"Basic %@",encodedEveryThing] forHTTPHeaderField:@"Authorization"];
