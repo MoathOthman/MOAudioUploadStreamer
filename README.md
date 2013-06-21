@@ -16,8 +16,8 @@ but that wont be necessary and add more complexity to the code ..
 HOW TO USE
 ==========
 
-#Simple way:Drag drop AudioStreamer classes to your project
-#Harder but better : AudioStreamer is a 'framework' so you can drag drop AudioStremaer project into your project
+Simple way:Drag drop AudioStreamer classes to your project
+Harder but better : AudioStreamer is a 'framework' so you can drag drop AudioStremaer project into your project
 then add it to the 'Target Dependencies' and to 'Link Binary Libraries" 
 
 And you need to specify the header search paths for the AudioStreamer ..
