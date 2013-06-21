@@ -1,10 +1,11 @@
 //
 //  MOAudioStreamer.h
-//  Tardeed
+//   
 //
 //  Created by moath othman on 5/22/13.
-//  Copyright (c) 2013 moath othman. All rights reserved.
-//
+//  Under MIT License
+//  dark2torch@gmail.com
+
 #import <UIKit/UIKit.h>
  #import <AVFoundation/AVFoundation.h>
 #import "NSData+Additions.h"
@@ -36,9 +37,10 @@
     @public  NSError *connectionError;
     BOOL stopSendingStupidData;
 
-    @private     NSMutableURLRequest *   request;
+    NSMutableURLRequest *   request;
 
 }
+@property(strong,nonatomic) NSMutableURLRequest *   request;;
 @property(assign,nonatomic)NSTimeInterval expectingTimeOut;
 @property(assign)id<MOAudioStreamerDeelegate>streamerDelegate;
 @property(strong,nonatomic)NSString*recordingPath;

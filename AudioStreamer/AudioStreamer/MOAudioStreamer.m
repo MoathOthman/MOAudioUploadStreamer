@@ -1,7 +1,12 @@
  
 
 
-
+//
+//  MOAudioStreamer.h
+//
+//  Created by moath othman on 5/22/13.
+//  Under MIT License
+//
 
 #import "MOAudioStreamer.h"
 
@@ -173,7 +178,7 @@ enum {
 @synthesize bufferLimit     = _bufferLimit;
 @synthesize recorder        =_recorder;
 @synthesize expectingTimeOut=_expectingTimeOut,userName,password;
-
+@synthesize request;
 #pragma mark * Status management
 
 // These methods are used by the core transfer code to update the UI.
@@ -283,11 +288,9 @@ enum {
      * which is in its turn attached to an output stream that takes its data from fileStream
      */
     [request setHTTPBodyStream:self.consumerStream];
-#if !USING_SYNC
-   
-      self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
-#endif
     
+      self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+     
     [self.producerStream open];
     
     /*create the thread to call the streamer */
@@ -722,6 +725,9 @@ NSString *fullPathToFilex;
         
     }
     
+    if (!self.fileToSaveName || [self.fileToSaveName isEqualToString:@""]) {
+        self.fileToSaveName=@"temp";
+    }
     
     soundFilePath = [dataPath
                      stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",self.fileToSaveName,ext ]];
