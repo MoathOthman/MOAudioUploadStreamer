@@ -1,11 +1,17 @@
 MOAudioUploadStreamer
 =====================
 
-An HTTP audio Streamer from iOS to server 
+An HTTP audio Streamer from iOS to server .
+
 I used simpleURLConnection provided by Apple and modified it 
+
 (a little) so we can use it with audio dynamically (not already saved audio files) from the 'microphone'
 to the HTTP Server ... 
+
+
 in this project I used an audio file but as a buffer and for saving audio also ...
+
+
 I used kAudioFormatAppleIMA4 (I found it the best)and you may use any format you want but you need to go inside the code and make 
 your modification..
 
@@ -16,7 +22,8 @@ but that wont be necessary and add more complexity to the code ..
 HOW TO USE
 ==========
 
-Simple way:Drag drop AudioStreamer classes to your project
+Simple way:Drag drop AudioStreamer classes to your project.
+
 Harder but better : AudioStreamer is a 'framework' so you can drag drop AudioStremaer project into your project
 then add it to the 'Target Dependencies' and to 'Link Binary Libraries" 
 
