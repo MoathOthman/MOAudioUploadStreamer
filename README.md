@@ -9,7 +9,7 @@ I used simpleURLConnection provided by Apple and modified it
 to the HTTP Server ... 
 
 
-in this project I used an audio file but as a buffer and for saving audio also ...
+in this project I used an audio file  as a buffer and for saving audio also ...
 
 
 I used kAudioFormatAppleIMA4 (I found it the best)and you may use any format you want but you need to go inside the code and make 
@@ -50,6 +50,7 @@ MOAudioStreamer *_moAudioStreamer=[MOAudioStreamer new];
 
 you need to set some crucial properties 
 _moAudioStreamer.streamerDelegate=self;
+
 _moAudioStreamer.recordingPath=yourpath;
 _moAudioStreamer.webServiceURL=yourServiceURL;
 _moAudioStreamer.fileToSaveName=@"somename";//optional if you dont need to track the files recorded
@@ -58,11 +59,13 @@ in my webservice I need credential ,if you dont go to postRequestWithURL: method
 so if you use it you can specify the password/username
 
 _moAudioStreamer.userName=@"ur username";
+
 _moAudioStreamer.password=@"your encrypted/non-encrypted password";
 
 Finally 
 
 [_moAudioStreamer startStreaming]; //to begin streaming
+
 [_moAudioStreamer stopStreaming];//to stop streaming
 
 
