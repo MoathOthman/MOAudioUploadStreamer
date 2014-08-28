@@ -277,19 +277,19 @@ enum {
     self.bufferLimit = [self.bodyPrefixData length];
     
     // Open a connection for the URL, configured to POST the file.
-    //api.hafizquran.com
-    NSString *urlString=[NSString stringWithFormat: @"%@",self.webServiceURL];
+     NSString *urlString=[NSString stringWithFormat: @"%@",self.webServiceURL];
     
-        request = (NSMutableURLRequest*)[self postRequestWithURL:urlString data:data fileName:nil];
-    [request setTimeoutInterval:1280];
+    request = (NSMutableURLRequest*)[self postRequestWithURL:urlString data:data fileName:nil];
+  
+    [request setTimeoutInterval:_expectingTimeOut];
     
   //  assert(request != nil);
-    /*here is an important step instead of attach data as apost data to the body you attak an inout stream
+    /*here is an important step instead of attach data as apost data to the body you attak an input stream
      * which is in its turn attached to an output stream that takes its data from fileStream
      */
-    [request setHTTPBodyStream:self.consumerStream];
+    [request setHTTPBodyStream:self.consumerStream ];
     
-      self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
      
     [self.producerStream open];
     
@@ -659,27 +659,6 @@ enum {
  #pragma mark * URL Request
 NSString *fullPathToFilex;
 
- 
-- (NSString *)getEncodedHeader {
-    NSString *userNamex =self.userName;
-    
-    NSLog(@"username is %@",userNamex);
-    //hashed md5 password//e10adc3949ba59abbe56e057f20f883e
-    NSString *passowrd =self.password;
-    //NSLog(@"password is %@",passowrd);
-    // NSString *paswordMD5=[[passowrd dataUsingEncoding:NSUTF8StringEncoding]md5];
-    NSData *authData1 = [userNamex dataUsingEncoding:NSASCIIStringEncoding];
-    //encoded username
-    
-    NSString *encodedUsername = [NSString stringWithString: [authData1 base64Encoding]];
-    //username + : + password
-    
-    NSString *combined =[NSString stringWithFormat:@"%@:%@",  encodedUsername,passowrd ];
-    //encoded combined
-    
-    NSString *encodedEveryThing= [NSString stringWithString:[[combined dataUsingEncoding:NSUTF8StringEncoding] base64Encoding]];
-    return encodedEveryThing;
-}
 
 -(NSURLRequest *)postRequestWithURL: (NSString *)url
 
@@ -687,28 +666,25 @@ NSString *fullPathToFilex;
                            fileName: (NSString*)fileName
 {
     fileName=@"";
-    aData=nil;
+//    aData=nil;
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy   timeoutInterval:240];
     
-    [urlRequest setHTTPMethod:@"PUT"];
+    [urlRequest setHTTPMethod:@"POST"];
     [request setAllowsCellularAccess:YES];
 
     NSString *myboundary = @"---------------------------14737809831466499882746641449";
-    NSString *contentType = [NSString stringWithFormat:@"audio/form-data; boundary=%@",myboundary];
+//    NSString *contentType = [NSString stringWithFormat:@"audio/form-data; boundary=%@",myboundary];
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",myboundary];
+
     [urlRequest addValue:contentType forHTTPHeaderField: @"Content-Type"];
     [urlRequest addValue:@"Keep-Alive" forHTTPHeaderField:@"Connection"];
     [urlRequest addValue:@"chunked" forHTTPHeaderField:@"Transfer-Encoding"];
     [urlRequest setValue:@"max-age=0" forHTTPHeaderField:@"Cache-Control"];
-    
-    NSString *encodedEveryThing;
-    
-    /*MARK:you can ignore the following 2 line if you don't use Basic Authorization */
-    encodedEveryThing = [self getEncodedHeader];
-    
-    [urlRequest addValue:[NSString stringWithFormat:@"Basic %@",encodedEveryThing] forHTTPHeaderField:@"Authorization"];
-    
-    
+ 
+    NSString *postString = @"name=testaudio&path=AWESOME!";
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+   
     return urlRequest;
 }
 -(void)setupNewRocordableFile{

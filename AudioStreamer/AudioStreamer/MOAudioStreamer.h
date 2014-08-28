@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
  #import <AVFoundation/AVFoundation.h>
-#import "NSData+Additions.h"
-
+ #import "NSData+Additions.h"
 @class MOAudioStreamer;
 
 @protocol MOAudioStreamerDeelegate <NSObject>

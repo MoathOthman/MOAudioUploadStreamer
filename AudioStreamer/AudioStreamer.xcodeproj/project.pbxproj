@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC57F9BE176D9D1100BE8894 /* NSData+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */; };
-		EC57F9BF176D9D1100BE8894 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */; };
-		EC57F9C0176D9D1100BE8894 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ECC28E2A175202F800A5923D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC28E29175202F800A5923D /* Foundation.framework */; };
 		ECC28E2F175202F800A5923D /* AudioStreamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ECC28E2E175202F800A5923D /* AudioStreamer.h */; };
 		ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E3A1752047800A5923D /* MOAudioStreamer.m */; };
 		ECC28E46175206B900A5923D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC28E381752047800A5923D /* NetworkManager.m */; };
 		ECC28E59175211D600A5923D /* MOAudioStreamer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ECC28E391752047800A5923D /* MOAudioStreamer.h */; };
+		ECCBC9E719ADCC530034F470 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCBC9E619ADCC530034F470 /* NSData+Additions.m */; };
 		ECE032ED1755D9FB000055EB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE032EC1755D9FB000055EB /* CoreFoundation.framework */; };
 		ECE032F31755D9FB000055EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECE032F11755D9FB000055EB /* InfoPlist.strings */; };
 		ECE032FD1755DB6F000055EB /* AudioStreamer.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC28E2E175202F800A5923D /* AudioStreamer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,8 +38,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Additions.h"; path = "../MOUploadAudioStreamer/NSData+Additions.h"; sourceTree = "<group>"; };
-		EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Additions.m"; path = "../MOUploadAudioStreamer/NSData+Additions.m"; sourceTree = "<group>"; };
 		ECC28E26175202F800A5923D /* libAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioStreamer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC28E29175202F800A5923D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ECC28E2D175202F800A5923D /* AudioStreamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioStreamer-Prefix.pch"; sourceTree = "<group>"; };
@@ -50,6 +46,8 @@
 		ECC28E381752047800A5923D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		ECC28E391752047800A5923D /* MOAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAudioStreamer.h; sourceTree = "<group>"; };
 		ECC28E3A1752047800A5923D /* MOAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOAudioStreamer.m; sourceTree = "<group>"; };
+		ECCBC9E519ADCC530034F470 /* NSData+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Additions.h"; sourceTree = "<group>"; };
+		ECCBC9E619ADCC530034F470 /* NSData+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Additions.m"; sourceTree = "<group>"; };
 		ECE032EB1755D9FB000055EB /* MOUploadAudioStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOUploadAudioStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE032EC1755D9FB000055EB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		ECE032F01755D9FB000055EB /* MOUploadAudioStreamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOUploadAudioStreamer-Info.plist"; sourceTree = "<group>"; };
@@ -83,8 +81,8 @@
 			children = (
 				ECC28E371752047800A5923D /* NetworkManager.h */,
 				ECC28E381752047800A5923D /* NetworkManager.m */,
-				EC57F9BC176D9D1100BE8894 /* NSData+Additions.h */,
-				EC57F9BD176D9D1100BE8894 /* NSData+Additions.m */,
+				ECCBC9E519ADCC530034F470 /* NSData+Additions.h */,
+				ECCBC9E619ADCC530034F470 /* NSData+Additions.m */,
 			);
 			name = "Assist Classes";
 			sourceTree = "<group>";
@@ -173,7 +171,6 @@
 				ECE032FE1755DB74000055EB /* MOAudioStreamer.h in Headers */,
 				ECE032FD1755DB6F000055EB /* AudioStreamer.h in Headers */,
 				ECE033041755DBC9000055EB /* NetworkManager.h in Headers */,
-				EC57F9BE176D9D1100BE8894 /* NSData+Additions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC28E3C1752047800A5923D /* MOAudioStreamer.m in Sources */,
+				ECCBC9E719ADCC530034F470 /* NSData+Additions.m in Sources */,
 				ECC28E46175206B900A5923D /* NetworkManager.m in Sources */,
-				EC57F9BF176D9D1100BE8894 /* NSData+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +267,6 @@
 			files = (
 				ECE032FF1755DB9D000055EB /* MOAudioStreamer.m in Sources */,
 				ECE033011755DBC2000055EB /* NetworkManager.m in Sources */,
-				EC57F9C0176D9D1100BE8894 /* NSData+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
