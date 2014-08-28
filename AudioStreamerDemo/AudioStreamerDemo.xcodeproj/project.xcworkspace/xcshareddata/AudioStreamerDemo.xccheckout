@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4D059560-8946-46A2-9ED7-642A63A2336D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AudioStreamerDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>53D8BE2A-E1E7-4B91-91B4-50A8D56C6B75</key>
+		<string>https://github.com/MoathOthman/MOAudioUploadStreamer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AudioStreamerDemo/AudioStreamerDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>53D8BE2A-E1E7-4B91-91B4-50A8D56C6B75</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MoathOthman/MOAudioUploadStreamer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>53D8BE2A-E1E7-4B91-91B4-50A8D56C6B75</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>53D8BE2A-E1E7-4B91-91B4-50A8D56C6B75</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MOAudioUploadStreamer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
